@@ -13,3 +13,4 @@ Thumbs.db
 *.pbxuser
 *.xcworkspace
 xcuserdata
+/android/estcb/gen/
