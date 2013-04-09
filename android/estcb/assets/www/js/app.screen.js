@@ -18,7 +18,6 @@ $(function(app, undefined) {
 
             // Position new screen on the DOM
             newScreen.render().$el
-                    .removeClass('transition')
                     .addClass('screen')
                     .addClass(transition.start)
                     .appendTo('body');
@@ -34,11 +33,13 @@ $(function(app, undefined) {
             setTimeout(function() {
                 if (oldScreen) {
                     oldScreen.remove();
-                    oldScreen.removeClass(transition.end);
+                    oldScreen.$el.removeClass(transition.end);
+                    oldScreen.trigger('close');
                 }
             }, 1000);
             
             this.trigger('open', newScreen);
+            newScreen.trigger('open');
         }
     };
     

@@ -3,6 +3,7 @@
     _.extend(app, {
         //
         // App domain structure
+        data: {},
         models: {},
         collections: {},
         views: {
@@ -16,15 +17,22 @@
             new app.views.Header().render().$el.appendTo('body');
             new app.views.Menu().render().$el.appendTo('body');
             
-            // Add a screen wrapper
-//            $('body').append('<div id="wrapper"></div>');
+            // retrieve data
+            app.data.news = new app.collections.News();
+            app.data.news.fetch();
+            app.data.jobs = new app.collections.Jobs();
+            app.data.jobs.fetch();
+            app.data.meals = new app.collections.Meals();
+            app.data.meals.fetch();
+            app.data.warnings = new app.collections.Warnings();
+            app.data.warnings.fetch();
             
             // Open first screen
-            app.screen.open({screen: new app.views.screens.News()});
-            
+//            app.screen.open({screen: new app.views.screens.News()});
+            app.screen.open({screen: new app.views.screens.Meals()});
         },
         //
-        // Open screen
+        // Your device is ready!
         ready: function() {
         }
     });

@@ -2,11 +2,11 @@
 
 body {
     background: black;
+    color: #ddd;
 }
 
 .header, .menu, .screen {
     background: transparent;
-    color: white;
 }
 
 .header{
@@ -51,6 +51,7 @@ body {
 .menu .option {
     border: 0px;
     border-bottom: 5px;
+    width: 24%;
     display: inline-block;
     margin-top: 2px;
     height: 43px;
@@ -60,7 +61,6 @@ body {
     line-height: 30px;
     margin-top: 8px;
     border-right: 1px solid gray;
-    padding: 0px 10px;
 }
 
 .menu .option:last-of-type .label {
@@ -75,4 +75,8 @@ body {
 .screen {
     padding-top: 100px;
     margin: 5px;
+}
+
+h1 {
+    color: white;
 }
