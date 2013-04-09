@@ -1,0 +1,78 @@
+/* ANDROID THEME */
+
+body {
+    background: black;
+}
+
+.header, .menu, .screen {
+    background: transparent;
+    color: white;
+}
+
+.header{
+    position: fixed;
+    background: black;
+    width: 100%;
+    height: 48px;
+    border-bottom: 2px solid #00ff00;
+    z-index: 100;
+    line-height: 48px;
+    vertical-align: middle;
+}
+
+.header .icon {
+    width: 20px;
+    height: 23px;
+    background: url(icon.png) 0px 0px no-repeat;
+    background-size: 20px 23px;
+    float: left;
+    margin: 15px 12px;
+}
+
+.header .title{
+    float: left;
+    margin-top: 3px;
+}
+
+.menu {
+    position: fixed;
+    background: black;
+    top: 49px;
+    width: 100%;
+    height: 48px;
+    border-bottom: 2px solid gray;
+    z-index: 100;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.menu .option {
+    border: 0px;
+    border-bottom: 5px;
+    display: inline-block;
+    margin-top: 2px;
+    height: 43px;
+}
+
+.menu .label {
+    line-height: 30px;
+    margin-top: 8px;
+    border-right: 1px solid gray;
+    padding: 0px 10px;
+}
+
+.menu .option:last-of-type .label {
+    border-right: none;
+}
+
+.menu .option.selected {
+    border-bottom-color: #00ff00;
+    border-style: solid;
+}
+
+.screen {
+    padding-top: 100px;
+    margin: 5px;
+}

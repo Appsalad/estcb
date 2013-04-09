@@ -1,0 +1,16 @@
+/* IOS THEME */
+
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 70px;
+}
+
+.menu {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 80px;
+}

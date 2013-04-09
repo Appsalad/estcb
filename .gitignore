@@ -14,3 +14,4 @@ Thumbs.db
 *.xcworkspace
 xcuserdata
 /android/estcb/gen/
+/android/estcb/bin/
