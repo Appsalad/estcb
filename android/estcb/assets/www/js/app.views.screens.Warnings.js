@@ -11,6 +11,18 @@ $(function(app, undefined) {
                 this.stopListening(app.data.warnings);
             }, this);
         },
+        events: {
+            'swipe': 'switchScreen'
+        },
+        switchScreen: function(e) {
+            if (e.direction == 'left') {
+                app.screen.open({screen: new app.views.screens.Map()});
+            }
+            else if (e.direction == 'right') {
+                app.screen.open({screen: new app.views.screens.Jobs(),
+                    reverse: true});
+            }
+        },
         className: 'warnings',
         templateEmpty: _.template('<div class="empty">Sem avisos para mostrar</div>'),
         templateNews: _.template('<div class="item"><h1><%= title %></h1></div>'),

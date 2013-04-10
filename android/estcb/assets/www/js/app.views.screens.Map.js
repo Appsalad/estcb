@@ -7,7 +7,13 @@ $(function(app, undefined) {
             }, this);
         },
         events: {
-            'tap [name=findPath]': 'openGoogleMaps'
+            'tap [name=findPath]': 'openGoogleMaps',
+            'swipe': 'switchScreen'
+        },
+        switchScreen: function(e) {
+            if (e.direction == 'right') {
+                app.screen.open({screen: new app.views.screens.Warnings(), reverse: true});
+            }
         },
         openGoogleMaps: function() {
             var self = this;

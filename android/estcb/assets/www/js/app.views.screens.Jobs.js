@@ -11,6 +11,17 @@ $(function(app, undefined) {
                 this.stopListening(app.data.jobs);
             }, this);
         },
+        events: {
+            'swipe': 'switchScreen'
+        },
+        switchScreen: function(e) {
+            if (e.direction == 'left') {
+                app.screen.open({screen: new app.views.screens.Warnings()});
+            }
+            else if (e.direction == 'right') {
+                app.screen.open({screen: new app.views.screens.News(), reverse: true});
+            }
+        },
         className: 'jobs',
         templateEmpty: _.template('<div class="empty">Sem anúncios para mostrar</div>'),
         templateJobs: _.template('<div class="item"><%= title %></div>'),

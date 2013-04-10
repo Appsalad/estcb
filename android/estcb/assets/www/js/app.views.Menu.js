@@ -26,7 +26,11 @@ $(function(app, undefined) {
             'tap .news:not(.selected)': 'openNews',
             'tap .jobs:not(.selected)': 'openJobs',
             'tap .warnings:not(.selected)': 'openWarnings',
-            'tap .map:not(.selected)': 'openMap'
+            'tap .map:not(.selected)': 'openMap',
+            'click .news:not(.selected)': 'openNews',
+            'click .jobs:not(.selected)': 'openJobs',
+            'click .warnings:not(.selected)': 'openWarnings',
+            'click .map:not(.selected)': 'openMap'
         },
         openMap: function() {
             app.screen.open({screen: new app.views.screens.Map(),

@@ -3,13 +3,21 @@ $(function(app, undefined) {
     app.views.screens.News = Backbone.View.extend({
         initialize: function(options) {
             var self = this;
-            
+
             this.on('open', function() {
                 this.listenTo(app.data.news, 'add reset change remove', this.render, this);
             }, this);
             this.on('close', function() {
                 this.stopListening(app.data.news);
             }, this);
+        },
+        events: {
+            'swipe': 'switchScreen'
+        },
+        switchScreen: function(e) {
+            if (e.direction == 'left') {
+                app.screen.open({screen: new app.views.screens.Jobs()});
+            }
         },
         className: 'news',
         templateEmpty: _.template('<div class="empty">Sem notícias para mostrar</div>'),

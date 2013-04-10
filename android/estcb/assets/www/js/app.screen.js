@@ -15,6 +15,10 @@ $(function(app, undefined) {
             };
             
             app.screen.current = newScreen;
+            if (oldScreen){
+                oldScreen.$el.css('top', - $('body').scrollTop());
+                $('body').scrollTop(0);
+            }
 
             // Position new screen on the DOM
             newScreen.render().$el
