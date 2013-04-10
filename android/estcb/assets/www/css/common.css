@@ -17,6 +17,7 @@ html, body {
 body {
     overflow: hidden;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
@@ -27,7 +28,7 @@ body {
     height: 100%;
     position: absolute;
     margin: 0px;
-    -webkit-transition: left .5s;
+    -webkit-transition: left .4s;
 }
 
 
@@ -84,3 +85,11 @@ h1 {
 .meals .item:first-child {
     margin-top: 30px;
 }
+
+.screen.map img.location {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 2px;
+}
+

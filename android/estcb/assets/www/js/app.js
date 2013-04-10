@@ -12,24 +12,21 @@
         //
         // Initialization of structures
         initialize: function() {
-            
+
             // Add header + menu
             new app.views.Header().render().$el.appendTo('body');
             new app.views.Menu().render().$el.appendTo('body');
-            
+
             // retrieve data
             app.data.news = new app.collections.News();
             app.data.news.fetch();
             app.data.jobs = new app.collections.Jobs();
             app.data.jobs.fetch();
-            app.data.meals = new app.collections.Meals();
-            app.data.meals.fetch();
             app.data.warnings = new app.collections.Warnings();
             app.data.warnings.fetch();
-            
+
             // Open first screen
-//            app.screen.open({screen: new app.views.screens.News()});
-            app.screen.open({screen: new app.views.screens.Meals()});
+            app.screen.open({screen: new app.views.screens.News()});
         },
         //
         // Your device is ready!

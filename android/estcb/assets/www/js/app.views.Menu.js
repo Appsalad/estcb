@@ -10,32 +10,43 @@ $(function(app, undefined) {
                     label: 'Emprego',
                     className: 'jobs'
                 }, {
-                    label: 'Ementas',
-                    className: 'meals'
-                }, {
+//                    label: 'Ementas',
+//                    className: 'meals'
+//                }, {
                     label: 'Avisos',
                     className: 'warnings'
+                }, {
+                    label: 'Mapa',
+                    className: 'map'
                 }
             ];
             app.screen.on('open', this.render, this);
         },
         events: {
-            'click .news:not(.selected)': 'openNews',
-            'click .jobs:not(.selected)': 'openJobs',
-            'click .meals:not(.selected)': 'openMeals',
-            'click .warnings:not(.selected)': 'openWarnings'
+            'tap .news:not(.selected)': 'openNews',
+            'tap .jobs:not(.selected)': 'openJobs',
+            'tap .warnings:not(.selected)': 'openWarnings',
+            'tap .map:not(.selected)': 'openMap'
+        },
+        openMap: function() {
+            app.screen.open({screen: new app.views.screens.Map(),
+                reverse: false});
         },
         openWarnings: function() {
-            app.screen.open({screen: new app.views.screens.Warnings()});
-        },
-        openMeals: function() {
-            app.screen.open({screen: new app.views.screens.Meals()});
+            var c = app.screen.current.className;
+            app.screen.open({screen: new app.views.screens.Warnings(),
+                reverse: c == 'map'});
         },
         openJobs: function() {
-            app.screen.open({screen: new app.views.screens.Jobs()});
+            var c = app.screen.current.className;
+            app.screen.open({screen: new app.views.screens.Jobs(),
+                reverse: c == 'warnings' || c == 'map'
+            });
         },
         openNews: function() {
-            app.screen.open({screen: new app.views.screens.News()});
+            app.screen.open({screen: new app.views.screens.News(),
+                reverse: true
+            });
         },
         className: 'menu',
         templateOption: _.template('<div class="option <%= className %>"><div class="label"><%= label %></div></div>'),
@@ -45,6 +56,7 @@ $(function(app, undefined) {
             _.each(this.options, function(option) {
                 self.$el.append($(self.templateOption(option)));
             });
+
             try {
                 this.$('.option').removeClass('selected');
                 this.$('.' + app.screen.current.className).addClass('selected');
