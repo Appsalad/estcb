@@ -95,7 +95,7 @@ body {
 
 .screen {
     padding-top: 60px;
-    height: 80%;
+    min-height: 80%;
 }
 
 .screen:after {

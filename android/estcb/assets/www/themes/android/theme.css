@@ -74,7 +74,7 @@ body {
 
 .screen {
     padding-top: 100px;
-    height: 80%;
+    min-height: 80%;
 }
 
 h1 {

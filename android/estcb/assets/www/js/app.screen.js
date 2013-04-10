@@ -40,7 +40,7 @@ $(function(app, undefined) {
                     oldScreen.$el.removeClass(transition.end);
                     oldScreen.trigger('close');
                 }
-            }, 1000);
+            }, 500);
             
             this.trigger('open', newScreen);
             newScreen.trigger('open');
