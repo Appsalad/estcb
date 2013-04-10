@@ -19,7 +19,7 @@
 
             // retrieve data
             app.data.news = new app.collections.News();
-//            app.data.news.fetch();
+            app.data.news.fetch();
             app.data.jobs = new app.collections.Jobs();
             app.data.jobs.fetch();
             app.data.warnings = new app.collections.Warnings();

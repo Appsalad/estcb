@@ -10,9 +10,6 @@ $(function(app, undefined) {
                     label: 'Emprego',
                     className: 'jobs'
                 }, {
-//                    label: 'Ementas',
-//                    className: 'meals'
-//                }, {
                     label: 'Avisos',
                     className: 'warnings'
                 }, {
@@ -53,7 +50,7 @@ $(function(app, undefined) {
             });
         },
         className: 'menu',
-        templateOption: _.template('<div class="option <%= className %>"><div class="label"><%= label %></div></div>'),
+        templateOption: _.template('<div class="option <%= className %>"><div class="icon"></div><div class="label"><%= label %></div></div>'),
         render: function() {
             var self = this;
             this.$el.empty();

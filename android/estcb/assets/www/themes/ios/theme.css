@@ -1,16 +1,138 @@
 /* IOS THEME */
 
 
+body {
+    background: #e6e6e6;
+    color: #383838;
+}
+
 .header {
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 70px;
+    width: 100%;
+    height: 48px;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    box-shadow: 0px 1px 2px #999;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#05abe0));
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 17px;
+    z-index: 1000;
 }
 
 .menu {
     position: fixed;
     bottom: 0px;
     left: 0px;
-    height: 80px;
+    width: 100%;
+    height: 56px;
+    z-index: 100;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top: 1px solid #999;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#05abe0));
+    z-index: 1000;
 }
+
+.menu .option {
+    display: inline-block;
+    margin-top: 3px;
+    width: 60px;
+    height: 50px;
+    margin-right: 4px;
+    border-radius: 3px;
+    position: relative;
+}
+.menu .option:last-of-type {
+    margin-right: 0px;
+}
+
+.menu .option .icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 15px;
+}
+
+.menu .option.news .icon{
+    background: url(news.png) 0px 0px no-repeat;
+    background-size: 32px;
+}
+
+.menu .option.jobs .icon{
+    background: url(jobs.png) 0px 0px no-repeat;
+    background-size: 32px;
+}
+
+.menu .option.warnings .icon{
+    background: url(warnings.png) 0px 0px no-repeat;
+    background-size: 32px;
+}
+
+.menu .option.map .icon{
+    background: url(map.png) 0px 0px no-repeat;
+    background-size: 32px;
+}
+
+.menu .label {
+    position: absolute;
+    width: 60px;
+    bottom: 0px;
+    text-align: center;
+    color: white;
+    text-transform: initial;
+    font-weight: lighter;
+}
+
+.menu .option.selected {
+    background: rgba(255,255,255,.15);
+}
+
+.screen {
+    padding-top: 60px;
+    height: 80%;
+}
+
+.screen:after {
+    content: '';
+    padding: 45px;
+}
+
+.item {
+    background: #fff;
+    padding:  8px;
+    border-radius: 6px;
+    border: 1px solid #c8c8c8;
+}
+
+h1:first-child {
+    margin-top: 0px;
+}
+
+button {
+    background: white;
+    border: 1px solid #c8c8c8;
+    border-radius: 8px;
+    padding: 6px;
+    width: 90%;
+    display: block;
+    margin: 0px auto;
+    color: #383838;
+}
+
+.item, button, img.location {
+    box-shadow: 0px 0px 1px #aaa;
+}
+
+img.location {
+    border: 1px solid #c8c8c8;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+
