@@ -55,7 +55,7 @@
                 return 180 * Math.atan2(n.y - t.y, n.x - t.x) / Math.PI
             },
             getDirection: function(t) {
-                return-78 > t && t > -112 ? "top" : t >= -22 && 22 >= t ? "right" : t >= 68 && 112 > t ? "down" : t >= 158 || -158 >= t ? "left" : "unknown"
+                return-60 > t && t > -120 ? "top" : t >= -30 && 30 >= t ? "right" : t >= 60 && 120 > t ? "down" : t >= 150 || -150 >= t ? "left" : "unknown"
             },
             getScale: function(t, n) {
                 var e = t.point, a = n.point;
